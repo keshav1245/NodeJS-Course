@@ -1,0 +1,13 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
+}
