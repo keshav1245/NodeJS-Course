@@ -18,7 +18,7 @@ const chalk = require('chalk');
 // console.log(chalk.blue('Hello', 'World!', 'Foo', 'bar', 'biz', 'baz'));
 // console.log(chalk.blue.bgRed.inverse.bold('Hello world!'));
 
-const getNotes = require('./notes');
+const notesUtilities = require('./notes');
 
 // const msg = getNotes()
 // console.log(msg);
@@ -61,8 +61,11 @@ yargs.command({
     handler : function (argv){
         // console.log("Adding a new note !")
         // console.log(argv)
-        console.log("Title : "+argv.title)
-        console.log("Body : "+argv.body)
+        // console.log("Title : "+argv.title)
+        // console.log("Body : "+argv.body)
+
+        notesUtilities.addNotes(argv.title, argv.body);
+
     }
 })
 
@@ -71,8 +74,17 @@ yargs.command({
 yargs.command({
     command : 'remove',
     describe : 'Remove a note',
-    handler : function(){
+    builder :{
+        title :{
+            describe : "Note Title to be removed!",
+            demandOption : true,
+            type : 'string'
+        }
+    },
+    handler : function(argv){
         console.log('Removing a note !')
+        // console.log(argv.title)
+        notesUtilities.removeNote(argv.title)
     }
 })
 
