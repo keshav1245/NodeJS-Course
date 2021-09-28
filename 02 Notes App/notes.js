@@ -11,6 +11,15 @@ const addNotes = (title, body) => {
 
     const duplicateNote = notes.find((note)=>note.title === title)
 
+    //Debugging
+    // First basic tool : Console log
+    // Second is node js debugger, which stops the execution at a point and uses
+    // chrome's v8engine to allow us to see any variable before the point
+
+    //To stop at this point, run with node inspect app.js .....
+    debugger
+
+
     if(!duplicateNote){
 
         const note_obj = {
