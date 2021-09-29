@@ -7,3 +7,4 @@ Course to Learn Node JS
 2. chalk : https://www.npmjs.com/package/chalk
 3. nodemon : https://www.npmjs.com/package/nodemon
 4. yargs : https://www.npmjs.com/package/yargs
+5. postman-request : https://www.npmjs.com/package/postman-request
