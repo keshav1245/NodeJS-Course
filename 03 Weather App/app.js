@@ -55,17 +55,17 @@ if(!place){
     return console.log("Location is missing!")
 }
 
-geocode(place, (error , data)=>{
+geocode(place, (error , {latitude, longitude, location} = {} )=>{
     if (error){
         return console.log(error)
     }
 
-    forecast(data.latitude, data.longitude, (error, foreCastData)=>{
+    forecast(latitude, longitude, (error, foreCastData)=>{
         if(error){
             return console.log(error)
         }
 
-        console.log(data.location)
+        console.log(location)
         console.log(foreCastData)
     })
     
