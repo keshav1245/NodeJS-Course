@@ -39,3 +39,25 @@ h1{
 .main-content{
     flex-grow: 1;
 }
+input[type=text]{
+    border: 1px solid #cccccc;
+    padding: 10px 16px;
+}
+
+input[type=submit]{
+    padding: 10px 20px;
+    color: white;
+    background-color: #888888;
+    cursor: pointer;
+    border: 1px solid #888888;
+}
+
+.error{
+    color: red;
+    font-weight: bold;
+}
+
+.success{
+    color: green;
+    font-weight: bold;
+}
