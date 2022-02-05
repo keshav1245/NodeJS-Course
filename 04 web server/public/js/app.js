@@ -10,7 +10,7 @@ document.querySelector('#weatherForm').addEventListener('submit',(e)=>{
     error.innerHTML = ""
     location.innerHTML = ""
     forecast.innerHTML = ""
-    fetch('http://localhost:3000/weather?address='+address)
+    fetch('/weather?address='+address)
     .then(
         (res) =>{
             res.json().then(
