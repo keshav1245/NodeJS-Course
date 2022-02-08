@@ -42,27 +42,42 @@
 // 3. After 2 seconds are up, call the callback function with the sum
 // 4. Test your work!
 
-const add = (a, b, callback)=>{
-    setTimeout(()=>{
-        const s = a + b
-        callback(s)
-    },2000)
-}
+// const add = (a, b, callback)=>{
+//     setTimeout(()=>{
+//         const s = a + b
+//         callback(s)
+//     },2000)
+// }
 
-add(1, 4, (sum) => {
-    console.log(sum) // Should print: 5
-})
+// add(1, 4, (sum) => {
+//     console.log(sum) // Should print: 5
+// })
 
-const geocode = (address, callback) => {
+// const geocode = (address, callback) => {
+//     setTimeout(()=>{
+//         const data ={
+//             latitude : 0,
+//             longitude : 0
+//         }
+//         callback(data)
+//     }, 2000)
+// }
+
+// geocode('India', (d) => {
+//     console.log(d)
+// })
+
+const doWorkCallback = (callback) =>{
     setTimeout(()=>{
-        const data ={
-            latitude : 0,
-            longitude : 0
-        }
-        callback(data)
+        // callback("This is my error!", undefined)
+        callback(undefined, [1,4,7])
     }, 2000)
 }
 
-geocode('India', (d) => {
-    console.log(d)
+doWorkCallback((error, result)=>{
+    if(error){
+        return console.log(error)
+    }
+
+    console.log(result)
 })
