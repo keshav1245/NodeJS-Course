@@ -4,6 +4,7 @@ const auth = require('../middleware/auth')
 const User = require('../models/user')
 const multer = require('multer');
 const sharp = require('sharp') 
+const { sendWelcomeEmail, sendCancelEmail } = require('../email/account')
 
 //USER MODEL END POINTS
 
@@ -13,6 +14,7 @@ router.post('/users', async (req, res)=>{
     
     try{
         await user.save()
+        sendWelcomeEmail(user.email, user.name)
         const token = await user.generateAuthToken()
         res.status(201).send({user, token})
     }catch(e){
@@ -179,6 +181,7 @@ router.delete('/users/me', auth, async (req, res)=>{
         //     return res.status(404).send({"error": "User not found !"})
         // }
         await req.user.remove()
+        sendCancelEmail(req.user.email, req.user.name)
         res.status(200).send(req.user)
     }catch(e){
         res.status(400).send(e)

@@ -108,7 +108,7 @@ userSchema.statics.findByCredentials = async (email, password) =>{
 
 //making custom function for user schema instance
 userSchema.methods.generateAuthToken = async function(){
-    const secret = 'aayaMeinGaddiMorhke'
+    const secret = process.env.JWT_SECRET
     const user = this;
     const token = jwt.sign({_id : user._id.toString()},secret)
     user.tokens = user.tokens.concat({token})

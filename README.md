@@ -17,3 +17,5 @@ Course to Learn Node JS
 11. JWT : https://www.npmjs.com/package/jsonwebtoken
 12. Multer : https://www.npmjs.com/package/multer
 13. Sharp : https://www.npmjs.com/package/sharp
+14. Sendgrid : https://www.npmjs.com/package/@sendgrid/mail
+15. env-cmd : https://www.npmjs.com/package/env-cmd
