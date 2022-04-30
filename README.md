@@ -19,3 +19,4 @@ Course to Learn Node JS
 13. Sharp : https://www.npmjs.com/package/sharp
 14. Sendgrid : https://www.npmjs.com/package/@sendgrid/mail
 15. env-cmd : https://www.npmjs.com/package/env-cmd
+16. jest : https://www.npmjs.com/package/jest
