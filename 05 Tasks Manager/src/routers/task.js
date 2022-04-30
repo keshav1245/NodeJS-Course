@@ -55,7 +55,7 @@ router.get('/tasks',auth, async (req,res)=>{
             }
         })
         if(!req.user.tasks || req.user.tasks.length == 0){
-            return res.send(404).send({"error": "User with the requested id not found !"})
+            return res.status(404).send({"error": "User with the requested id not found !"})
         }
         res.send(req.user.tasks)
     }catch(e){
